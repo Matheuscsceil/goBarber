@@ -1,0 +1,15 @@
+yarn eslint --fix src --ext .js
+
+docker run --name database -e POSTGRES_PASSWORD=docker -p 5423:5432 -d postgres
+docker ps -a
+postico ou postbird
+
+docker run --name mongodb -p 27017:27017 -d -t mongo
+mongodb compass
+
+docker run --name redis -p 6379:6379 -d -t redis:alpine
+
+yarn sequelize migration:create --name=create-users
+yarn sequelize db:migrate
+
+yarn sequelize db:migrate:undo ou yarn sequelize db:migrate:undo:all
